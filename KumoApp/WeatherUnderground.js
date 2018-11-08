@@ -20,7 +20,6 @@ tag.updated = function () {
     var dewPointF = 243.04 * (Math.log(humidity / 100) + (Number(17.625 * temperatureF) / Number(243.04 + temperatureF))) / Number(17.625 - Math.log(humidity / 100) - (Number(17.625 * temperatureF) / Number(243.04 + temperatureF)));
 
     var solarradiation = Number(tag.lux) * 0.0079;
-    // + "&solarradiation=" + solarradiation.toFixed(2) 
 
     var url = "http://weatherstation.wunderground.com/weatherstation/updateweatherstation.php?action=updateraw&ID=" + <%The ID of your weather station on wunderground.com%> + "&PASSWORD=" + <%The password you use to log in to wunderground.com%> + "&dateutc=" + wuDateString + "&tempf=" + temperatureF.toFixed(2) + "&dewptf=" + dewPointF.toFixed(2) + "&humidity=" + humidity.toFixed(2)+ "&solarradiation=" + solarradiation.toFixed(0) + "&softwaretype=jbtkumoapp14_" + sensorName;
 
